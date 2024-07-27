@@ -1,0 +1,7 @@
+body {
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, #878E94, #C7C9BA, #DDDFCA) !important;
+    background-size: cover;
+    background-blend-mode: overlay;
+}
