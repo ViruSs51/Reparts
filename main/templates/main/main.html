@@ -1,25 +1,24 @@
+{% extends 'main/initial.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %}</title>
-    
-    <link rel="stylesheet" href="{% static 'main/css/reset.css' %}">
-    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
-    {% block head %}{% endblock %}
-</head>
-<body>
-    <header class="hotbar">
 
+{% block head %}
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+
+    <link rel="stylesheet" href="{% static 'main/css/hotbar.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/button.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/input.css' %}">
+{% endblock %}
+
+{% block body %}
+    <header>
+        {% include 'main/hotbar1.html' %}
+        {% include 'main/hotbar2.html' %}
     </header>
     <div class="container">
         {% block container %}{% endblock %}
     </div>
-    <footer class="footer">
+    <footer>
 
     </footer>
-</body>
-</html>
+{% endblock %}

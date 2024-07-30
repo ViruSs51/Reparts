@@ -1,0 +1,15 @@
+* {
+    transition: all 0.4s ease-in-out;
+    box-sizing: border-box;
+}
+
+.input {
+    height: 28px;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+.input_1 {
+    background-color: #E3E1C8;
+    color: #191C2D;
+}

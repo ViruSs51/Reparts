@@ -1,7 +1,50 @@
+
+* {
+    transition: all 0.4s ease-in-out;
+    box-sizing: border-box;
+}
+a, abbr, area, article, aside, audio, b, bdo, blockquote, body, button, 
+ canvas, caption, cite, code, col, colgroup, command, datalist, dd, del, 
+ details, dialog, dfn, div, dl, dt, em, embed, fieldset, figure, form,
+ h1, h2, h3, h4, h5, h6, head, header, hgroup, hr, html, i, iframe, img, 
+ input, ins, keygen, kbd, label, legend, li, map, mark, menu, meter, nav,
+ noscript, object, ol, optgroup, option, output, p, param, pre, progress,
+ q, rp, rt, ruby, samp, section, select, small, span, strong, sub, sup, 
+ table, tbody, td, textarea, tfoot, th, thead, time, tr, ul, var, video {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+}
+
 body {
     height: 100vh;
     margin: 0;
     background: linear-gradient(to bottom, #878E94, #C7C9BA, #DDDFCA) !important;
     background-size: cover;
     background-blend-mode: overlay;
+}
+
+.container {
+    padding: 0 100px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    
 }

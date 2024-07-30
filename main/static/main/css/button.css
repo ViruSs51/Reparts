@@ -1,0 +1,83 @@
+* {
+    transition: all 0.4s ease-in-out;
+    box-sizing: border-box;
+}
+
+.button_1 {
+    color: #191C2D;
+    display: inline-block;
+}
+.button_1:hover {
+    color: #878E94;
+}
+
+.button_2 {
+    color: #E3E1C8;
+    display: inline-block;
+}
+.button_2:hover {
+    color: #9b5a62;
+}
+
+.button_3 {
+    background-color: #191C2D;
+    border-radius: 6px;
+    color: #E3E1C8;
+    font-size: 12px;
+    font-weight: 400;
+    display: inline-block;
+    padding: 6px;
+}
+.button_3:hover {
+    background-color: #FD6573;
+    color: #191C2D;
+    font-size: 13px;
+    padding: 7px;
+}
+
+.button_4 {
+    background-color: #FD6573;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 400;
+    display: inline-block;
+    padding: 8px 15px;
+}
+.button_4:hover {
+    background-color: #E3E1C8;
+    color: #FD6573;
+    font-size: 13px;
+    padding: 9px 15px;
+}
+
+.button_logo {
+    color: #fffffe;
+    font-size: 25px;
+    display: inline-block;
+}
+.button_logo:hover {
+    color: #ffffff;
+    font-size: 26px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
