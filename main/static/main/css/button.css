@@ -3,20 +3,21 @@
     box-sizing: border-box;
 }
 
+.button, .button__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
 .button_1 {
     color: #191C2D;
     display: inline-block;
-}
-.button_1:hover {
-    color: #878E94;
 }
 
 .button_2 {
     color: #E3E1C8;
     display: inline-block;
-}
-.button_2:hover {
-    color: #9b5a62;
 }
 
 .button_3 {
@@ -28,12 +29,6 @@
     display: inline-block;
     padding: 6px;
 }
-.button_3:hover {
-    background-color: #FD6573;
-    color: #191C2D;
-    font-size: 13px;
-    padding: 7px;
-}
 
 .button_4 {
     background-color: #FD6573;
@@ -44,11 +39,24 @@
     display: inline-block;
     padding: 8px 15px;
 }
-.button_4:hover {
-    background-color: #E3E1C8;
-    color: #FD6573;
-    font-size: 13px;
-    padding: 9px 15px;
+
+.button_5 {
+    background-color: #435664;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    flex: 1;
+    min-height: 100%;
+}
+.button_5 p {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+}
+.button_5 .button__content {
+    height: 100%;
 }
 
 .button_logo {
@@ -56,28 +64,76 @@
     font-size: 25px;
     display: inline-block;
 }
-.button_logo:hover {
-    color: #ffffff;
-    font-size: 26px;
+
+.button_logo-2 .logo1 {
+    width: 35px;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+.button_logo-3 {
+    cursor: pointer;
+}
+.button_logo-3 .logo1 {
+    width: 30px;
+}
+
+/* Extra small devices (phones, 600px and down) *
+@media only screen and (max-width: 599px) {
+    /* Стили для телефонов *
+    
+}*/
+
+/* Small devices (portrait tablets and large phones, 600px to 767px) */
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+    /* Стили для планшетов в портретном режиме и больших телефонов */
 
 }
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
 
+/* Medium devices (landscape tablets, 768px to 991px) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    /* Стили для планшетов в ландшафтном режиме */
+    
 }
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
 
-}
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
+/* Large devices (laptops/desktops, 992px to 1199px) */
+@media only screen and (min-width: 992px) {  
+    /* Стили для ноутбуков/десктопов */
+    .button_1:hover {
+        color: #878E94;
+    }
 
+    .button_2:hover {
+        color: #9b5a62;
+    }
+
+    .button_3:hover {
+        background-color: #FD6573;
+        color: #191C2D;
+        font-size: 13px;
+        padding: 7px;
+    }
+
+    .button_4:hover {
+        background-color: #E3E1C8;
+        color: #FD6573;
+        font-size: 13px;
+        padding: 9px 15px;
+    }
+
+    .button_5:hover {
+        background-color: #384852;
+    }
+    .button_5:hover p {
+        color: rgb(205, 205, 205);
+    }
+
+    .button_logo:hover {
+        color: #ffffff;
+        font-size: 26px;
+    }
 }
-/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) *
 @media only screen and (min-width: 1200px) {
-
-}
+    /* Стили для больших устройств *
+    
+}*/

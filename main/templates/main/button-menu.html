@@ -1,0 +1,12 @@
+{% load static %}
+
+<nav class="menu menu1">
+    <a href="{% if is_url %} {% url href %} {% else %} {{ href }} {% endif %}" class="button button_logo-3" id="menu-button-outer">
+        <img src="{% static src %}" alt="logo" class="logo1">
+    </a>
+    <div class="menu__content" id="menu-content">
+        <a href="{% if is_url %} {% url href %} {% else %} {{ href }} {% endif %}" class="button button_logo-3" id="menu-button-inner">
+            <img src="{% static src %}" alt="logo" class="logo1">
+        </a>
+    </div>
+</nav>

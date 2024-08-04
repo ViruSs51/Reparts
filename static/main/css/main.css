@@ -24,27 +24,48 @@ body {
     background-blend-mode: overlay;
 }
 
+header {
+    display: flex;
+    flex-direction: column;
+}
+
 .container {
     padding: 0 100px;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+.block {
+    display: block;
+}
+.inline-block {
+    display: inline-block;
+}
+
+/* Extra small devices (phones, 600px and down) *
+@media only screen and (max-width: 599px) {
+    /* Стили для телефонов *
+    
+}*/
+
+/* Small devices (portrait tablets and large phones, 600px to 767px) */
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+    /* Стили для планшетов в портретном режиме и больших телефонов */
+
+}
+
+/* Medium devices (landscape tablets, 768px to 991px) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    /* Стили для планшетов в ландшафтном режиме */
     
 }
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-    
+
+/* Large devices (laptops/desktops, 992px to 1199px) */
+@media only screen and (min-width: 992px) /*and (max-width: 1199px)*/ {  
+    /* Стили для ноутбуков/десктопов */
+
 }
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-    
-}
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-    
-}
-/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) *
 @media only screen and (min-width: 1200px) {
+    /* Стили для больших устройств *
     
-}
+}*/
