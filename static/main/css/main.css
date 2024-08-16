@@ -16,21 +16,44 @@ a, abbr, area, article, aside, audio, b, bdo, blockquote, body, button,
     font-weight: 400;
 }
 
+
 body {
     height: 100vh;
     margin: 0;
-    background: linear-gradient(to bottom, #878E94, #C7C9BA, #DDDFCA) !important;
+    background: linear-gradient(to bottom, #878E94, #C7C9BA, #DDDFCA);
     background-size: cover;
     background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 header {
     display: flex;
     flex-direction: column;
+    background-color: #233446;
+    padding-bottom: 5px;
 }
 
+.search-form {
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0 23px 0 23px;
+}
+
+
 .container {
-    padding: 0 100px;
+    z-index: 0;
+    flex: 1;
+    min-height: 500px;
+    /*padding: 0 23px;*/
 }
 
 .block {
@@ -38,6 +61,39 @@ header {
 }
 .inline-block {
     display: inline-block;
+}
+
+footer {
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #435664;
+    min-height: 200px;
+    padding-top: 50px;
+}
+.footer__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+.footer__row {
+    display: flex;
+    flex-direction: column;
+}
+
+.copy, .copy a {
+    font-weight: 700;
+    color: white;
+}
+.copy span {
+    color: gray;
+}
+
+
+.main-hotbar {
+    min-height: 40px;
 }
 
 /* Extra small devices (phones, 600px and down) *

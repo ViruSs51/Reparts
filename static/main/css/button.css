@@ -76,6 +76,15 @@
     width: 30px;
 }
 
+.button_search-1 {
+    background-color: #F3B2A3;
+    width: 55px;
+    height: 100%;
+    border-radius: 0 50px 50px 0;
+}
+.button_search-1 img {
+    width: 20px;
+}
 /* Extra small devices (phones, 600px and down) *
 @media only screen and (max-width: 599px) {
     /* Стили для телефонов *
