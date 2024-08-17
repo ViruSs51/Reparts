@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 
-.ad {
+.promotion {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,23 +13,23 @@
     padding-bottom: 10px;
     overflow: hidden;
 }
-.ad__image {
+.promotion__image {
     overflow: hidden;
     max-width: 100%;
 }
-.ad__image img {
+.promotion__image img {
     max-width: 100%;
     height: 100%;
     margin-bottom: 5px;
     object-fit: cover;
 }
-.ad p {
+.promotion p {
     width: 100%;
     font-weight: 600;
     font-size: 14px;
 }
 
-.ad_1 {
+.promotion_1 {
     width: 100%;
     max-height: 200px;
 }

@@ -16,7 +16,7 @@
 
 {% block body %}
     <div class="wrapper">
-        <header>
+        <header class="header">
             {% include 'hotbars/hotbar3.html' %}
             <form action="{% url 'home' %}" method="get" class="search-form">
                 {% include 'inputs/input2.html' with placeholder="- Detalii auto & instrumente -" name="search" %}
@@ -25,15 +25,13 @@
         <div class="container">
             {% block container %}{% endblock %}
         </div>
-        <footer>
+        <footer class="footer">
             <div class="footer__content">
                 <div class="footer__row">
                     <p class="copy"><a href="{% url 'home' %}">IT4World</a> <span>&copy; 2024</span></p>
                 </div>
             </div>
         </footer>
-        <nav class="main-hotbar">
-            {% include 'hotbars/hotbar4.html' %}
-        </nav>
+        {% include 'hotbars/hotbar4.html' %}
     </div>
 {% endblock %}

@@ -57,6 +57,7 @@
 }
 
 .hotbar_4 {
+    transform: translateY(0);
     position: fixed;
     bottom: 0;
     background-color: #435664;

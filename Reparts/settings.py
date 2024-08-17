@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-!q31m$f+k9+k*gk%&hont-vy*sct$#jc&q_hk57t^+n36tf116"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "reparts.md",
@@ -32,7 +32,7 @@ ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "127.0.1.1",
-    get_local_ip_adress(True)
+    get_local_ip_adress(False)
 ]
 
 

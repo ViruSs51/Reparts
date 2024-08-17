@@ -1,12 +1,72 @@
 {% load static %}
 
-<nav class="menu menu1">
+<nav class="menu menu_1">
     <a href="{% if is_url %} {% url href %} {% else %} {{ href }} {% endif %}" class="button button_logo-3" id="menu-button-outer">
         <img src="{% static src %}" alt="logo" class="logo1">
     </a>
     <div class="menu__content" id="menu-content">
-        <a href="{% if is_url %} {% url href %} {% else %} {{ href }} {% endif %}" class="button button_logo-3" id="menu-button-inner">
-            <img src="{% static src %}" alt="logo" class="logo1">
-        </a>
+        <header class="header menu__header">
+            <div class="header__row">
+                <h2>REPARTS.MD</h2>
+            </div>
+            <div class="header__row">
+                <a href="{% if is_url %} {% url href %} {% else %} {{ href }} {% endif %}" class="button button_logo-3" id="menu-button-inner">
+                    <img src="{% static src %}" alt="logo" class="logo1">
+                </a>
+            </div>
+        </header>
+        <div class="container menu__container">
+            <ul class="menu__list">
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+                {% include "buttons/button-list.html" with is_url=false href="#"%}
+            </ul>
+        </div>
     </div>
 </nav>
