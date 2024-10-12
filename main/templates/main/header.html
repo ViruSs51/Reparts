@@ -1,0 +1,47 @@
+{% load static %}
+
+<div class="header__container container">
+    <div class="header__column column header__column_hotbar hotbar">
+        <a class="header__row row header__row_logo" href='{% url "home" %}'>
+            <img src="{% static "main/img/logo.jpg" %}" alt="">
+        </a>
+        <div class="header__row row header__row_title">
+            <h1>REPARTS.MD</h1>
+        </div>
+        <div class="header__row row header__row_menu-button" id='menu-button'>
+            <img src="{% static 'main/img/icon-menu-button-light.svg' %}" alt="">
+        </div>
+    </div>
+    {% if search %}
+        <form action="catalog" method="get" class="header__column column header__column_search-bar search-bar">
+            <div class="header__row row header__row_search-input">
+                <input type="search" name="search" placeholder="Детали & Инструменты" aria-label="Поиск">
+            </div>
+            <button class="header__row row header__row_button-submit-search" type="submit">
+                <img src="{% static 'main/img/icon-search-dark.svg' %}" alt="">
+            </button>
+        </form>
+    {% endif %}
+    {% if banner %}
+        <div class="header__column column header__column_banner banner">
+            <a href="#" class="header__row row header__row_banner">
+                <img src="{% static 'main/img/banner.svg' %}" alt="">
+            </a>
+        </div>
+    {% endif %}
+    {% if categories %}
+        <div class="header__column column header__column_categories">
+            <div class="header__row row header__row_category-title">
+                <h2>Категории</h2>
+            </div>
+            <div class="header__list list header__list_category">
+                {% for c in category %}
+                    <a href="{{ c.url }}" class="header__row row header__row_category">
+                        <img src="{% static c.url_image %}" alt="">
+                        <h3>{{ c.title }}</h3>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+</div>
