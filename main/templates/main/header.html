@@ -1,7 +1,7 @@
 {% load static %}
 
 <div class="header__container container">
-    <div class="header__column column header__column_hotbar hotbar">
+    <nav class="header__column column header__column_hotbar hotbar">
         <a class="header__row row header__row_logo" href='{% url "home" %}'>
             <img src="{% static "main/img/logo.jpg" %}" alt="">
         </a>
@@ -11,7 +11,7 @@
         <div class="header__row row header__row_menu-button" id='menu-button'>
             <img src="{% static 'main/img/icon-menu-button-light.svg' %}" alt="">
         </div>
-    </div>
+    </nav>
     {% if search %}
         <form action="catalog" method="get" class="header__column column header__column_search-bar search-bar">
             <div class="header__row row header__row_search-input">
@@ -34,10 +34,7 @@
             <div class="header__row row header__row_category-title">
                 <h2>Категории</h2>
             </div>
-            <div class="header__categories-buttons categories-buttons">
-                <img id="category-button-left" src="{% static "main/img/icon-left-arrow-dark.svg" %}" alt="">
-                <img id="category-button-right" src="{% static "main/img/icon-right-arrow-dark.svg" %}" alt="">
-            </div>
+            {% include "main/left-right-buttons.html" with parent='header' %}
             <div class="header__list list header__list_category list-category">
                 {% for c in category %}
                     <a href="{{ c.url }}" class="header__row row header__row_category">

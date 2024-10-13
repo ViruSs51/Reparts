@@ -18,10 +18,7 @@
                 <div class="header__row row header__row_category-title category-title">
                     <h2>{{ c.title }}</h2>
                 </div>
-                <div class="content__categories-buttons categories-buttons">
-                    <img id="category-button-left" src="{% static "main/img/icon-left-arrow-light.svg" %}" alt="">
-                    <img id="category-button-right" src="{% static "main/img/icon-right-arrow-light.svg" %}" alt="">
-                </div>
+                {% include "main/left-right-buttons.html" with parent='content' %}
                 <div class="content__column column content__column_category-products category-products list-category">
                     {% for p in c.products|slice_list:10 %}
                         <a href="{{ p.url }}" class="content__row row content__row_product product">
@@ -36,7 +33,4 @@
             </div>
         {% endfor %}
     </div>
-{% endblock %}
-{% block footer %}
-    {% include 'main/footer.html' %}
 {% endblock %}

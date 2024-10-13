@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     categoryLists.forEach(function(categoryList) {
         const buttonLeft = categoryList.previousElementSibling.querySelector("#category-button-left");
         const buttonRight = categoryList.previousElementSibling.querySelector("#category-button-right");
-        const scrollAmount = 200;
+        const scrollAmount = 350;
 
 
         if (buttonLeft) {

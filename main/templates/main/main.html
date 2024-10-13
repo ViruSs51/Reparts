@@ -16,18 +16,58 @@
 <body>
     <div class="wrapper">
         <div class="container">
-            <header class="header">
+            <header class="container__header header">
                 {% block header %}{% endblock %}
             </header>
-            <div class="content">
+            <div class="container__content content">
                 {% block content %}{% endblock %}
             </div>
-            <footer class="footer">
-                {% block footer %}{% endblock %}
+            <footer class="container__footer footer">
+                {% include 'main/footer.html' %}
             </footer>
+            <nav class="container__second-hotbar second-hotbar" id="hotbar">
+                <div class="second-hotbar__container container">
+                    <a href="{% url 'home' %}" class="second-hotbar__nav-button nav-button {% if page == 'home' %}nav-button_focus{% endif %}">
+                        {% if page == "home" %}
+                            <img class="button-image" src="{% static "main/img/icon-home-dark.svg" %}" alt="">
+                        {% else %}
+                            <img class="button-image" src="{% static "main/img/icon-home-light.svg" %}" alt="">
+                        {% endif %}
+                    </a>
+                    <a href="#" class="second-hotbar__nav-button nav-button {% if page == 'chat' %}nav-button_focus{% endif %}">
+                        {% if page == "chat" %}
+                            <img class="button-image" src="{% static "main/img/icon-chat-dark.svg" %}" alt="">
+                        {% else %}
+                            <img class="button-image" src="{% static "main/img/icon-chat-light.svg" %}" alt="">
+                        {% endif %}
+                    </a>
+                    <a href="#" class="second-hotbar__nav-button nav-button {% if page == 'catalog' %}nav-button_focus{% endif %}">
+                        {% if page == "catalog" %}
+                            <img class="button-image" src="{% static "main/img/icon-catalog-dark.svg" %}" alt="">
+                        {% else %}
+                        <img class="button-image" src="{% static "main/img/icon-catalog-light.svg" %}" alt="">
+                        {% endif %}
+                    </a>
+                    <a href="#" class="second-hotbar__nav-button nav-button {% if page == 'cart' %}nav-button_focus{% endif %}">
+                        {% if page == "cart" %}
+                            <img class="button-image" src="{% static "main/img/icon-cart-dark.svg" %}" alt="">
+                        {% else %}
+                            <img class="button-image" src="{% static "main/img/icon-cart-light.svg" %}" alt="">
+                        {% endif %}
+                    </a>
+                    <a href="#" class="second-hotbar__nav-button nav-button {% if page == 'profile' %}nav-button_focus{% endif %}">
+                        {% if page == "profile" %}
+                            <img class="button-image" src="{% static "main/img/icon-profile-dark.svg" %}" alt="">
+                        {% else %}
+                            <img class="button-image" src="{% static "main/img/icon-profile-light.svg" %}" alt="">
+                        {% endif %}
+                    </a>
+                </div>
+            </nav>
         </div>
     </div>
 
+    <script src="{% static "main/js/second-hotbar.js" %}"></script>
     <script src="{% static "main/js/scroll-categories.js" %}"></script>
 </body>
 </html>

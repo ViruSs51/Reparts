@@ -1,3 +1,7 @@
+* {
+    transition: all 0.2s ease-in-out;
+}
+
 body {
     height: 100%;
 }
@@ -27,6 +31,7 @@ a {
     padding: 0;
     width: 100%;
     height: 100%;
+    position: relative;
 }
 .column {
     display: block;
@@ -36,6 +41,40 @@ a {
 }
 .logo {
     width: 30px;
+}
+
+.second-hotbar {
+    transition: transform 0.4s ease-in-out;
+    width: 100%;
+    position: fixed;
+    bottom: 10px;
+}
+.second-hotbar-hidden {
+    transform: translateY(120%);
+}
+.second-hotbar__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+.second-hotbar__nav-button {
+    display: inline;
+    background-color: rgb(59, 59, 59);
+    padding: 10px;
+    border-radius: 50px;
+}
+.nav-button_focus {
+    background-color: #d9d9d9;
+}
+.second-hotbar__nav-button:hover {
+    background-color: rgb(134, 134, 134);
+}
+.second-hotbar__nav-button:active {
+    background-color: rgb(62, 62, 62);
+}
+.button-image {
+    width: 25px;
 }
 
 .header {
@@ -182,17 +221,17 @@ a {
     margin-top: 20px;
     z-index: 4;
 }
-.header__categories-buttons img {
+.categories-buttons img {
     width: 35px;
     opacity: 0.5;
     pointer-events: auto;
     filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(50%) contrast(100%);
 }
-.header__categories-buttons img:hover {
+.categories-buttons img:hover {
     filter: invert(27%) sepia(8%) saturate(0%) hue-rotate(200deg) brightness(85%) contrast(90%);
 }
-.header__categories-buttons img:active {
-    filter: invert(27%) sepia(8%) saturate(0%) hue-rotate(200deg) brightness(200%) contrast(100%);
+.categories-buttons img:active {
+    filter: invert(27%) sepia(8%) saturate(0%) hue-rotate(200deg) brightness(110%) contrast(100%);
 }
 
 
@@ -203,20 +242,18 @@ a {
     flex: 1;
     height: 100%;
 }
-.content__container {
-    row-gap: 20px;
-}
 .list-categories {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     column-gap: 10px;
     height: 250px;
-    padding: 10px;
+    padding: 20px 15px 15px 15px;
     background-color: black;
     border-radius: 8px;
     color: black;
     position: relative;
+    margin-bottom: 20px;
 }
 .list-categories a {
     color: black;
@@ -273,6 +310,7 @@ a {
 
 .content__categories-buttons {
     display: flex;
+    top: 5px;
     left: 0px;
     flex-direction: row;
     justify-content: space-between;
@@ -281,7 +319,7 @@ a {
     height: 100%;
     pointer-events: none;
     position: absolute;
-    padding: 0 10px;
+    padding: 0 15px;
     margin-top: 20px;
     z-index: 4;
 }
@@ -295,11 +333,11 @@ a {
     filter: invert(27%) sepia(8%) saturate(0%) hue-rotate(200deg) brightness(85%) contrast(90%);
 }
 .dcategories-buttons img:active {
-    filter: invert(27%) sepia(8%) saturate(0%) hue-rotate(200deg) brightness(200%) contrast(100%);
+    filter: invert(27%) sepia(8%) saturate(0%) hue-rotate(200deg) brightness(80%) contrast(100%);
 }
 
 .footer {
-    padding: 25px 15px;
+    padding: 30px 15px 60px 15px;
     background-color: black;
     width: 100%;
     min-height: 250px;
