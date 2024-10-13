@@ -41,7 +41,7 @@
                             <img class="button-image" src="{% static "main/img/icon-chat-light.svg" %}" alt="">
                         {% endif %}
                     </a>
-                    <a href="#" class="second-hotbar__nav-button nav-button {% if page == 'catalog' %}nav-button_focus{% endif %}">
+                    <a href="#" class="second-hotbar__nav-button nav-button nav-button_catalog {% if page == 'catalog' %}nav-button_focus{% endif %}">
                         {% if page == "catalog" %}
                             <img class="button-image" src="{% static "main/img/icon-catalog-dark.svg" %}" alt="">
                         {% else %}
