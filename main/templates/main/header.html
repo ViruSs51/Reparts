@@ -34,7 +34,11 @@
             <div class="header__row row header__row_category-title">
                 <h2>Категории</h2>
             </div>
-            <div class="header__list list header__list_category">
+            <div class="header__categories-buttons categories-buttons">
+                <img id="category-button-left" src="{% static "main/img/icon-left-arrow-dark.svg" %}" alt="">
+                <img id="category-button-right" src="{% static "main/img/icon-right-arrow-dark.svg" %}" alt="">
+            </div>
+            <div class="header__list list header__list_category list-category">
                 {% for c in category %}
                     <a href="{{ c.url }}" class="header__row row header__row_category">
                         <img src="{% static c.url_image %}" alt="">

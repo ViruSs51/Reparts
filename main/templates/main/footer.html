@@ -1,0 +1,48 @@
+{% load static %}
+
+<div class="footer__container container">
+    <div class="footer__column column footer__column_navigation">
+        <div class="footer__row row">
+            <h2>Информация</h2>
+            <a href="#" class="footer__button button">Кто мы</a>
+            <a href="#" class="footer__button button">Про сайт</a>
+            <a href="#" class="footer__button button">Контакты</a>
+            <a href="#" class="footer__button button">Услуги</a>
+            <a href="#" class="footer__button button">Политика конфиденциальности</a>
+            <a href="#" class="footer__button button">Соглашение пользователя</a>
+            <a href="#" class="footer__button button">Условия использования</a>
+        </div>
+        <div class="footer__row row">
+            <h2>Навигация</h2>
+            <a href="{% url 'home' %}" class="footer__button button">Главная</a>
+            <a href="#" class="footer__button button">Профиль</a>
+            <a href="#" class="footer__button button">Каталог</a>
+            <a href="#" class="footer__button button">Корзина</a>
+            <a href="#" class="footer__button button">Регистрация</a>
+        </div>
+        <div class="footer__row row">
+            <h2>Помощь</h2>
+            <a href="#" class="footer__button button">Служба поддержки</a>
+            <a href="#" class="footer__button button">Помощь</a>
+            <a href="#" class="footer__button button">FAQ</a>
+        </div>
+        <div class="footer__row row footer__row_company-networks">
+            <a href="#" class="footer__button button">
+                <img class='logo' src="{% static 'main/img/logo-instagram.png' %}" alt="">
+                Instagram
+            </a>
+            <a href="#" class="footer__button button">
+                <img class='logo' src="{% static 'main/img/logo-facebook.png' %}" alt="">
+                Facebook
+            </a>
+            <a href="tel:+37367600000" class="footer__button button">
+                <img class='logo' src="{% static 'main/img/logo-phone.png' %}" alt="">
+                +37367600000
+            </a>
+        </div>
+    </div>
+    <div class="footer__column column footer__column_information">
+        <h2 class="footer__row row footer__row_copyright-name">IT4World</h2>
+        <p class="footer__row row footer__row_copyright">&copy; 2024</p>
+    </div>
+</div>

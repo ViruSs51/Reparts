@@ -6,52 +6,22 @@ def home(request):
         'category': [
             {
                 'title': 'Колёса',
-                'description': 'Список колёс для разных машин',
                 'url_image': 'main/img/banner.svg',
-                'url': 'catalog/wheel/2'
-            },
-            {
-                'title': 'Колёса',
-                'description': 'Список колёс для разных машин',
-                'url_image': 'main/img/banner.svg',
-                'url': 'catalog/wheel/2'
-            },
-            {
-                'title': 'Колёса',
-                'description': 'Список колёс для разных машин',
-                'url_image': 'main/img/banner.svg',
-                'url': 'catalog/wheel/2'
-            },
-            {
-                'title': 'Колёса',
-                'description': 'Список колёс для разных машин',
-                'url_image': 'main/img/banner.svg',
-                'url': 'catalog/wheel/2'
-            },
-            {
-                'title': 'Колёса',
-                'description': 'Список колёс для разных машин',
-                'url_image': 'main/img/banner.svg',
-                'url': 'catalog/wheel/2'
-            },
-            {
-                'title': 'Колёса',
-                'description': 'Список колёс для разных машин',
-                'url_image': 'main/img/banner.svg',
-                'url': 'catalog/wheel/2'
-            },
-            {
-                'title': 'Колёса',
-                'description': 'Список колёс для разных машин',
-                'url_image': 'main/img/banner.svg',
-                'url': 'catalog/wheel/2'
-            },
-            {
-                'title': 'Колёса',
-                'description': 'Список колёс для разных машин',
-                'url_image': 'main/img/banner.svg',
-                'url': 'catalog/wheel/2'
-            }
+                'url': 'catalog/wheel',
+                'products': [
+                    {
+                        'title': 'Колёсо от БМВ',
+                        'description': 'Данные колёса преднозначены для бмв и также они зимний',
+                        'parameters': {
+                            'radius': 10
+                        },
+                        'price': 100,
+                        'country_valute': 'USD',
+                        'url_image': 'main/img/banner.svg',
+                        'url': 'catalog/wheel/2'
+                    } for p in range(10)
+                ]
+            } for c in range(10)
         ]
     }
 

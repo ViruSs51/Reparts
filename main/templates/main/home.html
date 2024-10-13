@@ -1,4 +1,6 @@
 {% extends 'main/main.html' %}
+{% load static %}
+{% load custom_filters %}
 
 {% block title %}{% endblock %}
 {% block head %}
@@ -10,8 +12,31 @@
     {% include 'main/header.html' with banner=True search=True categories=True %}
 {% endblock %}
 {% block content %}
-
+    <div class="content__container container">
+        {% for c in category|slice_list:4 %}
+            <div class="content__list-categories list-categories">
+                <div class="header__row row header__row_category-title category-title">
+                    <h2>{{ c.title }}</h2>
+                </div>
+                <div class="content__categories-buttons categories-buttons">
+                    <img id="category-button-left" src="{% static "main/img/icon-left-arrow-light.svg" %}" alt="">
+                    <img id="category-button-right" src="{% static "main/img/icon-right-arrow-light.svg" %}" alt="">
+                </div>
+                <div class="content__column column content__column_category-products category-products list-category">
+                    {% for p in c.products|slice_list:10 %}
+                        <a href="{{ p.url }}" class="content__row row content__row_product product">
+                            <img src="{% static p.url_image %}" alt="">
+                            <div class="product__information">
+                                <h3 class="product__title">{{ p.title }}</h3>
+                                <p class="prouct__price">{{ p.price }} {{ p.country_valute }}</p>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
 {% block footer %}
-
+    {% include 'main/footer.html' %}
 {% endblock %}
