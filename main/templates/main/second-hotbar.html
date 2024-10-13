@@ -1,0 +1,41 @@
+{% load static %}
+
+<nav class="container__second-hotbar second-hotbar" id="hotbar">
+    <div class="second-hotbar__container container">
+        <a href="{% url 'home' %}" class="second-hotbar__nav-button nav-button {% if page == 'home' %}nav-button_focus{% endif %}">
+            {% if page == "home" %}
+                <img class="button-image" src="{% static "main/img/icon-home-dark.svg" %}" alt="">
+            {% else %}
+                <img class="button-image" src="{% static "main/img/icon-home-light.svg" %}" alt="">
+            {% endif %}
+        </a>
+        <a href="#" class="second-hotbar__nav-button nav-button {% if page == 'chat' %}nav-button_focus{% endif %}">
+            {% if page == "chat" %}
+                <img class="button-image" src="{% static "main/img/icon-chat-dark.svg" %}" alt="">
+            {% else %}
+                <img class="button-image" src="{% static "main/img/icon-chat-light.svg" %}" alt="">
+            {% endif %}
+        </a>
+        <a href="#" class="second-hotbar__nav-button nav-button nav-button_catalog {% if page == 'catalog' %}nav-button_focus{% endif %}">
+            {% if page == "catalog" %}
+                <img class="button-image" src="{% static "main/img/icon-catalog-dark.svg" %}" alt="">
+            {% else %}
+                <img class="button-image" src="{% static "main/img/icon-catalog-light.svg" %}" alt="">
+            {% endif %}
+        </a>
+        <a href="#" class="second-hotbar__nav-button nav-button {% if page == 'cart' %}nav-button_focus{% endif %}">
+            {% if page == "cart" %}
+                <img class="button-image" src="{% static "main/img/icon-cart-dark.svg" %}" alt="">
+            {% else %}
+                <img class="button-image" src="{% static "main/img/icon-cart-light.svg" %}" alt="">
+            {% endif %}
+        </a>
+        <a href="#" class="second-hotbar__nav-button nav-button {% if page == 'profile' %}nav-button_focus{% endif %}">
+            {% if page == "profile" %}
+                <img class="button-image" src="{% static "main/img/icon-profile-dark.svg" %}" alt="">
+            {% else %}
+                <img class="button-image" src="{% static "main/img/icon-profile-light.svg" %}" alt="">
+            {% endif %}
+        </a>
+    </div>
+</nav>

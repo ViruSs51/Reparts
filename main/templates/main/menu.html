@@ -1,0 +1,53 @@
+{% load static %}
+
+<nav class="menu open" id="menu">
+    <div class="menu__container container">
+        <div class="menu__column column menu__column_header header">
+            {% include "main/header.html" with in_menu=True %}
+        </div>
+        <div class="menu__column column menu__column_principal-navigation">
+            <nav class="menu__column column menu__column_navigation">
+                <a href="{% url "home" %}" class="menu__row row">
+                    <img class="icon" src="{% static "main/img/icon-home-light.svg" %}" alt="">
+                    <p>Главная</p>
+                </a>
+                <a href="{% url "home" %}" class="menu__row row">
+                    <img class="icon" src="{% static "main/img/icon-profile-light.svg" %}" alt="">
+                    <p>Профиль</p>
+                </a>
+                <a href="{% url "home" %}" class="menu__row row">
+                    <img class="icon" src="{% static "main/img/icon-catalog-light.svg" %}" alt="">
+                    <p>Каталог</p>
+                </a>
+                <a href="{% url "home" %}" class="menu__row row">
+                    <img class="icon" src="{% static "main/img/icon-cart-light.svg" %}" alt="">
+                    <p>Корзина</p>
+                </a>
+                <a href="{% url "home" %}" class="menu__row row">
+                    <img class="icon" src="{% static "main/img/icon-chat-light.svg" %}" alt="">
+                    <p>Чат</p>
+                </a>
+            </nav>
+            <nav class="menu__column column menu__column_auth">
+                <a href="{% url "home" %}" class="menu__row row">
+                    <img class="icon" src="" alt="">
+                    <p>Войти</p>
+                </a>
+                <a href="{% url "home" %}" class="menu__row row">
+                    <img class="icon" src="{% static "main/img/icon-add.svg" %}" alt="">
+                    <p>Зарегистрироваться</p>
+                </a>
+            </nav>
+            <nav class="menu__column column menu__column_settings">
+                <a href="{% url "home" %}" class="menu__row row">
+                    <img class="icon" src="{% static "main/img/icon-language.svg" %}" alt="">
+                    <p>Язык</p>
+                </a>
+                <a href="{% url "home" %}" class="menu__row row">
+                    <img class="icon" src="{% static "main/img/icon-settings.svg" %}" alt="">
+                    <p>Настройки</p>
+                </a>
+            </nav>
+        </div>
+    </div>
+</nav>

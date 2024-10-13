@@ -2,15 +2,13 @@
 
 <div class="header__container container">
     <nav class="header__column column header__column_hotbar hotbar">
-        <a class="header__row row header__row_logo" href='{% url "home" %}'>
-            <img src="{% static "main/img/logo.jpg" %}" alt="">
+        <a class="header__row row header__row_notification" href='#'>
+            <img src="{% static "main/img/icon-notification.svg" %}" alt="">
         </a>
         <div class="header__row row header__row_title">
             <h1>REPARTS.MD</h1>
         </div>
-        <div class="header__row row header__row_menu-button" id='menu-button'>
-            <img src="{% static 'main/img/icon-menu-button-light.svg' %}" alt="">
-        </div>
+        {% include "main/menu-button.html" %}
     </nav>
     {% if search %}
         <form action="catalog" method="get" class="header__column column header__column_search-bar search-bar">
