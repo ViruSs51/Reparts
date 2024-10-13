@@ -50,7 +50,7 @@ a {
     bottom: 10px;
 }
 .second-hotbar-hidden {
-    transform: translateY(120%);
+    transform: translateY(150%);
 }
 .second-hotbar__container {
     display: flex;
