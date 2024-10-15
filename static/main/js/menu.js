@@ -1,9 +1,9 @@
-document.getElementById('menu-button').addEventListener('click', function() {
-    const menu = document.getElementById('menu');
-    menu.classList.toggle('open');
-});
+const buttonIds = ['menu-button', 'in-menu-button'];
+const menu = document.getElementById('menu');
 
-document.getElementById('in-menu-button').addEventListener('click', function() {
-    const menu = document.getElementById('menu');
-    menu.classList.toggle('open');
+buttonIds.forEach(id => {
+    document.getElementById(id).addEventListener('click', () => {
+        menu.classList.toggle('open');
+        document.body.classList.toggle('no-scroll');
+    });
 });

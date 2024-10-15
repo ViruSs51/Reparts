@@ -249,7 +249,9 @@ a {
     height: 100%;
 }
 .menu {
-    transition: all 0.5s ease-in-out;
+    transition: height 0.7s ease-in-out, 
+    border-radius 0.7s ease-in-out,
+    opacity 1.2s ease-in-out;
     display: flex;
     opacity: 1;
     position: fixed;
@@ -257,11 +259,22 @@ a {
     right: 0px;
     padding: 0 15px 15px 15px;
     width: 100%;
-    height: 0%;
-    overflow: hidden;
+    height: 0px;
+    overflow: hidden auto;
+    opacity: 0;
     background-color: black;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
     pointer-events: all;
     z-index: 4;
+}
+.menu.open {
+    transition: height 0.8s ease-in-out, 
+    border-radius 0.8s ease-in-out,
+    opacity 0.3s ease-in-out;
+    height: 100%;
+    opacity: 1;
+    border-radius: 0;
 }
 .menu .header, .menu .header__column_hotbar {
     padding-bottom: 0px;
@@ -273,9 +286,6 @@ a {
 }
 .menu__row img {
     width: 30px;
-}
-.menu.open {
-    height: 100%;
 }
 .menu h1 {
     color: white;
@@ -302,7 +312,7 @@ a {
     display: flex;
     flex-direction: column;
 }
-.menu__column .row{
+.menu__column .menu__row{
     display: flex;
     flex-direction: row;
     justify-content: left;
@@ -472,4 +482,11 @@ a {
     opacity: 0.5;
     pointer-events: auto;
     filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(50%) contrast(100%);
+}
+
+
+/*------------------*/
+
+.no-scroll {
+    overflow: hidden;
 }
