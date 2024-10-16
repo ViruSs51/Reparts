@@ -309,8 +309,8 @@ a {
     height: 100%;
     margin-bottom: 0px;
 }
-.menu.open {
-    margin-bottom: 100px;
+.menu.open .menu__column_auth {
+    margin-bottom: 60px;
 }
 .menu__column_settings {
     display: flex;
