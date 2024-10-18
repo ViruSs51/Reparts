@@ -29,11 +29,11 @@
                 </a>
             </nav>
             <nav class="menu__column column menu__column_auth">
-                <a href="#" class="menu__row row">
+                <a href="{% url "login" %}" class="menu__row row">
                     <img class="icon" src="{% static "main/img/icon-login.svg" %}" alt="">
                     <p>Войти</p>
                 </a>
-                <a href="#" class="menu__row row">
+                <a href="{% url "signup" %}" class="menu__row row">
                     <img class="icon" src="{% static "main/img/icon-signup.svg" %}" alt="">
                     <p>Зарегистрироваться</p>
                 </a>

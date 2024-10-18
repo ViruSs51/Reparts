@@ -32,6 +32,7 @@ a {
     width: 100%;
     height: 100%;
     position: relative;
+    overflow: hidden;
 }
 .column {
     display: block;
@@ -488,6 +489,153 @@ a {
     filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(50%) contrast(100%);
 }
 
+
+.signup {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+    color: white;
+}
+.signup h2 {
+    font-size: 20px;
+}
+.signup a, .signup h2 {
+    color: white;
+}
+.signup__container {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    padding: 25px 15px;
+    background-color: black;
+    border-radius: 15px;
+}
+.signup__column {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.signup__column_title {
+    margin-bottom: 30px;
+}
+.signup__row_title {
+    display: inline;
+}
+.signup__row {
+    display: flex;
+}
+.signup__row_checkbox {
+    align-items: start;
+}
+.signup__column_inputs {
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+.signup__column_inputs .row {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgb(185, 185, 185);
+    border-radius: 15px;
+}
+.signup__column_inputs input {
+    color: white;
+}
+
+.signup__column_button .row {
+    display: inline-block;
+}
+.signup__column_button button {
+    padding: 10px 25px;
+    color: black;
+    background-color: white;
+    border-radius: 15px;
+}
+.signup__row_checkbox {
+    display: inline-flex;
+    max-width: 250px;
+    font-size: 12px;
+}
+.signup__row_checkbox input {
+    margin-right: 10px;
+}
+.signup__row_checkbox a {
+    color: rgb(67, 67, 215);
+    text-decoration-line: underline;
+}
+
+
+.login {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+    color: white;
+}
+.login h2 {
+    font-size: 20px;
+}
+.login a, .login h2 {
+    color: white;
+}
+.login__container {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    padding: 25px 15px;
+    background-color: black;
+    border-radius: 15px;
+}
+.login__column {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.login__column_title {
+    margin-bottom: 30px;
+}
+.login__row_title {
+    display: inline;
+}
+.login__row {
+    display: flex;
+}
+.login__row_checkbox {
+    align-items: start;
+}
+.login__column_inputs {
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+.login__column_inputs .row {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgb(185, 185, 185);
+    border-radius: 15px;
+}
+.login__column_inputs input {
+    color: white;
+}
+
+.login__column_button .row {
+    display: inline-block;
+}
+.login__column_button button {
+    padding: 10px 25px;
+    color: black;
+    background-color: white;
+    border-radius: 15px;
+}
+.login__row_checkbox {
+    display: inline-flex;
+    max-width: 250px;
+    font-size: 12px;
+}
+.login__row_checkbox input {
+    margin-right: 10px;
+}
+.login__row_checkbox a {
+    color: rgb(67, 67, 215);
+    text-decoration-line: underline;
+}
 
 /*------------------*/
 
