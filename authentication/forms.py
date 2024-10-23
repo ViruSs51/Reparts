@@ -1,34 +1,57 @@
+from logging import PlaceHolder
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
-class SignUpForm(UserCreationForm):
-    first_name = forms.CharField(
-        max_length=30, 
-        required=False, 
-        widget=forms.TextInput(attrs={'placeholder': 'Имя'}),
-        help_text='Optional.'
+#class SignUpForm(UserCreationForm):
+#    first_name = forms.CharField(
+#        max_length=30, 
+#        required=False, 
+#        widget=forms.TextInput(attrs={'placeholder': 'Имя'}),
+#        help_text='Optional.'
+#    )
+#    last_name = forms.CharField(
+#        max_length=30, 
+#        required=False, 
+#        widget=forms.TextInput(attrs={'placeholder': 'Фамилия'}),
+#        help_text='Optional.'
+#    )
+#    email = forms.EmailField(
+#        max_length=254, 
+#        widget=forms.EmailInput(attrs={'placeholder': 'Электронная почта'}),
+#        help_text='Required. Enter a valid email address.'
+#    )
+#    password1 = forms.CharField(
+#        widget=forms.PasswordInput(attrs={'placeholder': 'Пароль'}),
+#        label='Password'
+#    )
+#    password2 = forms.CharField(
+#        widget=forms.PasswordInput(attrs={'placeholder': 'Повторите пароль'}),
+#        label='Password confirmation'
+#    )
+#
+#    class Meta:
+#        model = User
+#        fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2')
+
+class LoginForm(forms.Form):
+    username = forms.CharField(
+        widget=forms.TextInput(attrs={'placeholder': 'Юзернайм'})
     )
-    last_name = forms.CharField(
-        max_length=30, 
-        required=False, 
-        widget=forms.TextInput(attrs={'placeholder': 'Фамилия'}),
-        help_text='Optional.'
+    password = forms.CharField(
+        widget=forms.PasswordInput(attrs={'placeholder': 'Пароль'})
     )
-    email = forms.EmailField(
-        max_length=254, 
-        widget=forms.EmailInput(attrs={'placeholder': 'Электронная почта'}),
-        help_text='Required. Enter a valid email address.'
-    )
-    password1 = forms.CharField(
-        widget=forms.PasswordInput(attrs={'placeholder': 'Пароль'}),
-        label='Password'
-    )
-    password2 = forms.CharField(
-        widget=forms.PasswordInput(attrs={'placeholder': 'Повторите пароль'}),
-        label='Password confirmation'
-    )
+
+class UserRegistrationForm(forms.ModelForm):
+    password = forms.CharField(label='Password', widget=forms.PasswordInput)
+    password2 = forms.CharField(label='Repeat password', widget=forms.PasswordInput)
 
     class Meta:
         model = User
-        fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2')
+        fields = ('username', 'first_name', 'last_name', 'email')
+
+    def clean_password2(self):
+        cd = self.cleaned_data
+        if cd['password'] != cd['password2']:
+            raise forms.ValidationError('Passwords don\'t match')
+        
+        return cd['password2']

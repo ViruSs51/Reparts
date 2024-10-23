@@ -1,30 +1,30 @@
 {% extends "main/main.html" %}
 {% load static %}
 
-{% block title %}Login{% endblock %}
+{% block title %}Log-in{% endblock %}
 
 {% block header %}
     {% include 'main/header.html' with search=True %}
 {% endblock %}
 {% block content %}
     <div class="content__container container">
-        <div class="content__login login">
-            <form action="#" method="post" class="login__container container">
+        <div class="content__auth-form auth-form login">
+            <form action="{% url "login" %}" method="post" class="auth-form__container container">
                 {% csrf_token %}
-                <div class="login__column column login__column_title">
-                    <h2 class="login__row row login__row_title">Вход</h2>
+                <div class="auth-form__column column auth-form__column_title">
+                    <h2 class="auth-form__row row auth-form__row_title">Вход</h2>
                 </div>
-                <div class="login__column column login__column_inputs">
-                    <div class="login__row row">
-                        <input type="email" name="email" placeholder="Электронная почта" aria-label="Электронная почта">
+                <div class="auth-form__column column auth-form__column_inputs">
+                    <div class="auth-form__row row">
+                        {{ form.username }}
                     </div>
-                    <div class="login__row row">
-                        <input type="password" name="password" placeholder="Пароль" aria-label="Пароль">
+                    <div class="auth-form__row row">
+                        {{ form.password }}
                     </div>
                 </div>
-                <div class="login__column column login__column_button">
-                    <div class="login__row row">
-                        <button method="submit">
+                <div class="auth-form__column column auth-form__column_button column_button">
+                    <div class="auth-form__row row">
+                        <button type="submit">
                             Войти
                         </button>
                     </div>

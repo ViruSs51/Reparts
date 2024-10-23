@@ -1,0 +1,24 @@
+{% extends "main/main.html" %}
+{% load static %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block header %}
+    {% include 'main/header.html' with search=True %}
+{% endblock %}
+{% block content %}
+    <div class="content__container container">
+        <div class="content__auth-form auth-form logout">
+            <div class="auth-form__container container">
+                <div class="auth-form__column column auth-form__column_title">
+                    <h2 class="auth-form__row row auth-form__row_title">Dashborad</h2>
+                </div>
+                <div class="auth-form__column column auth-form__column_inputs">
+                    <div class="auth-form__row row">
+                        <p>Welcome to your dashboard.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+from django.urls import reverse_lazy
 from pathlib import Path
 import os
 from dotenv import load_dotenv
@@ -76,27 +77,33 @@ TEMPLATES = [
     },
 ]
 
+#CACHES = {
+#    'default': {
+#        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+#        'LOCATION': 'unique-snowflake',
+#    }
+#}
+
 CACHES = {
     'default': {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-        'LOCATION': 'unique-snowflake',
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': 'redis://127.0.0.1:6379/1',
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        }
     }
 }
 
-#CACHES = {
-#    'default': {
-#        'BACKEND': 'django_redis.cache.RedisCache',
-#        'LOCATION': 'redis://127.0.0.1:6379/1',
-#        'OPTIONS': {
-#            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-#        }
-#    }
-#}
-#
-#CELERY_BROKER_URL = 'redis://127.0.0.1:6379/0'
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379/0'
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 SESSION_CACHE_ALIAS = 'default'
+SESSION_COOKIE_AGE = 1209600
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+
+LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
+LOGIN_URL = reverse_lazy('login')
+LOGOUT_URL = reverse_lazy('logout')
 
 
 WSGI_APPLICATION = 'Reparts.wsgi.application'
