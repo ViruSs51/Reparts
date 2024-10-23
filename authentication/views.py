@@ -1,8 +1,9 @@
+import email
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.utils.safestring import mark_safe
-from .forms import LoginForm
+from .forms import LoginForm, UserRegistrationForm
 
 # Create your views here.
 def redirect_login(request):
@@ -11,19 +12,19 @@ def redirect_login(request):
 def user_login(request):
     data = {
         'message_data': {
-            'title': 'Message'
+            'title': 'Сообщение'
         }
     }
 
     if request.user.is_authenticated:
         return redirect('home')
 
-    if request.method == 'POST':
+    elif request.method == 'POST':
         form = LoginForm(request.POST)
 
         if form.is_valid():
             cd = form.cleaned_data
-            user = authenticate(username=cd['username'], password=cd['password'])
+            user = authenticate(username=cd['email'], password=cd['password'])
 
             if user is not None:
                 if user.is_active:
@@ -37,7 +38,7 @@ def user_login(request):
 
                     return render(request, 'authentication/message.html', data)
             else:
-                data['message_data']['message'] = mark_safe('<span class="red">Неверный логин или пароль.</span>')
+                data['message_data']['message'] = mark_safe('<span class="red">Неверный емайл или пароль.</span>')
 
                 return render(request, 'authentication/message.html', data)
         
@@ -49,13 +50,33 @@ def user_login(request):
     return render(request, 'authentication/login.html', data)
 
 def user_signup(request):
-    data = {}
+    data = {
+        'message_data': {
+            'titile': 'Сообщение'
+        }
+    }
 
     if request.user.is_authenticated:
         return redirect('home')
 
-    if request.method == 'POST':
-        pass
+    elif request.method == 'POST':
+        user_form = UserRegistrationForm(request.POST)
+        
+        if user_form.is_valid():
+            new_user = user_form.save(commit=False)
+            new_user.set_password(user_form.cleaned_data['password'])
+            new_user.save()
+
+            data['user_form'] = user_form
+            data['message_data']['title'] = f'Welcome {new_user.first_name}!'
+            data['message_data']['message'] = mark_safe(f'Ваша учетная запись успешно создана. Теперь вы можете <a href="{reverse("login")}">войти в систему</a>.')
+
+            return render(request, 'authentication/message.html', data)
+    
+    else:
+        user_form = UserRegistrationForm()
+
+    data['user_form'] = user_form
 
     return render(request, 'authentication/signup.html', data)
 
@@ -67,7 +88,7 @@ def user_logout(request):
         data['user_connected'] = request.user.is_authenticated
         data['message_data'] = {
             'title': 'Logged out',
-            'message': mark_safe(f'You have been successfully logged out. You can <a href="{reverse("login")}">log-in again</a>.')
+            'message': mark_safe(f'Вы успешно вышли из системы. Вы можете <a href="{reverse("login")}">войти снова</a>.')
         }
     else:
         return redirect('home')

@@ -34,20 +34,29 @@ from django.contrib.auth.models import User
 #        fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2')
 
 class LoginForm(forms.Form):
-    username = forms.CharField(
-        widget=forms.TextInput(attrs={'placeholder': 'Юзернайм'})
+    email = forms.CharField(
+        widget=forms.EmailInput(attrs={'placeholder': 'Емейл'}),
     )
     password = forms.CharField(
         widget=forms.PasswordInput(attrs={'placeholder': 'Пароль'})
     )
 
 class UserRegistrationForm(forms.ModelForm):
-    password = forms.CharField(label='Password', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Repeat password', widget=forms.PasswordInput)
+    password = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={'placeholder': 'Пароль'}))
+    password2 = forms.CharField(label='Repeat password', widget=forms.PasswordInput(attrs={'placeholder': 'Повторите пароль'}))
+    username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Юзернайм'}))
+    first_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Имя'}))
+    last_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Фамилия'}))
+    email = forms.CharField(widget=forms.EmailInput(attrs={'placeholder': 'Емайл'}))
+    agree_privacy_policy = forms.BooleanField(
+        required=True,
+        error_messages={'required': 'Вы должны принять условиями использования и политикой конфиденциальности'},
+        widget=forms.CheckboxInput(attrs={'class': 'auth-form__column_checkbox'})
+    )
 
     class Meta:
         model = User
-        fields = ('username', 'first_name', 'last_name', 'email')
+        fields = ('username', 'first_name', 'last_name', 'email', 'agree_privacy_policy')
 
     def clean_password2(self):
         cd = self.cleaned_data

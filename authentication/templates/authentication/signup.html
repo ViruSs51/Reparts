@@ -16,19 +16,22 @@
                 </div>
                 <div class="auth-form__column column auth-form__column_inputs">
                     <div class="auth-form__row row">
-                        <input type="text" name="first-name" placeholder="Имя" aria-label="Имя">
+                        {{ user_form.username }}
                     </div>
                     <div class="auth-form__row row">
-                        <input type="text" name="last-name" placeholder="Фамилия" aria-label="Фамилия">
+                        {{ user_form.first_name }}
                     </div>
                     <div class="auth-form__row row">
-                        <input type="email" name="email" placeholder="Электронная почта" aria-label="Электронная почта">
+                        {{ user_form.last_name }}
                     </div>
                     <div class="auth-form__row row">
-                        <input type="password" name="password" placeholder="Пароль" aria-label="Пароль">
+                        {{ user_form.email }}
                     </div>
                     <div class="auth-form__row row">
-                        <input type="password" name="repeat-password" placeholder="Повторите пароль" aria-label="Повторите пароль">
+                        {{ user_form.password }}
+                    </div>
+                    <div class="auth-form__row row">
+                        {{ user_form.password2 }}
                     </div>
                 </div>
                 <div class="auth-form__column column auth-form__column_button column_button">
@@ -40,7 +43,7 @@
                 </div>
                 <div class="auth-form__column column auth-form__column_checkbox">
                     <div class="auth-form__row row auth-form__row_checkbox">
-                        <input type="checkbox" name="agree-privacy-policy">
+                        {{ user_form.agree_privacy_policy }}
                         <p>Я согласен с <a href="#">условиями использования и политикой конфиденциальности</a></p>
                     </div>
                 </div>
